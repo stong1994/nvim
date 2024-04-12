@@ -22,6 +22,13 @@ return {
     { "hrsh7th/cmp-cmdline" },
     { "saadparwaiz1/cmp_luasnip" },
   },
+
+  init = function()
+    local keys = require("lazyvim.plugins.lsp.keymaps").get()
+    -- disable a keymap
+    keys[#keys + 1] = { "K", false }
+  end,
+
   config = function()
     local lsp = require("lsp-zero")
 
@@ -34,7 +41,7 @@ return {
       vim.keymap.set("n", "gd", function()
         vim.lsp.buf.definition()
       end, vim.tbl_deep_extend("force", opts, { desc = "LSP Goto Definition" }))
-      vim.keymap.set("n", "K", function()
+      vim.keymap.set("n", "gk", function()
         vim.lsp.buf.hover()
       end, vim.tbl_deep_extend("force", opts, { desc = "LSP Hover" }))
       vim.keymap.set("n", "<leader>vws", function()
@@ -82,6 +89,8 @@ return {
         -- "bashls",
         "marksman",
         "solargraph",
+        -- "golangci_lint_ls",
+        -- "gopls",
         -- "cucumber_language_server",
       },
       handlers = {
