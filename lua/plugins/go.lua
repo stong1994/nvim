@@ -1,5 +1,9 @@
 return {
   "fatih/vim-go",
+  config = function()
+    vim.g.go_term_mode = "split"
+    vim.g.go_term_enabled = 1
+  end,
 }
 -- return {
 --   {
