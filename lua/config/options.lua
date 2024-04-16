@@ -118,4 +118,8 @@ vim.o.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
-vim.opt.winbar = "%=%m %f"
+-- vim.opt.winbar = "%=%m %f"
+
+-- Undercurl(works on kitty)
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])

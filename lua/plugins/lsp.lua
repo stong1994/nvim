@@ -75,7 +75,7 @@ return {
       ensure_installed = {
         "tsserver",
         "eslint",
-        "rust_analyzer",
+        -- "rust_analyzer",
         -- "kotlin_language_server",
         "jdtls",
         "lua_ls",
